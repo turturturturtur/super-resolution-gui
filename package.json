@@ -1,0 +1,64 @@
+{
+  "name": "super-resolution-toolbox",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "一个普通的黄桃",
+  "license": "ISC",
+  "description": "Hello,world",
+  "devDependencies": {
+    "electron": "^34.1.1",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "build": {
+    "appId": "com.example.superresolution",
+    "productName": "超分辨率工具",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!*.md",
+      "!*.map"
+    ],
+    "extraResources": [
+      {
+        "from": "python-PyQt5",
+        "to": "python-PyQt5"
+      },
+      {
+        "from": "SR_process",
+        "to": "SR_process"
+      }
+    ],
+    "extraFiles": [
+      {
+        "from": "python-PyQt5",
+        "to": "python-PyQt5"
+      },
+      {
+        "from": "SR_process",
+        "to": "SR_process"
+      }
+    ],
+    "win": {
+      "icon": "icon.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
